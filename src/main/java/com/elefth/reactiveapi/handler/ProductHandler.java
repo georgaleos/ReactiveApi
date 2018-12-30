@@ -97,7 +97,7 @@ public class ProductHandler {
 
     public Mono<ServerResponse> getProductEvents(ServerRequest request) {
         Flux<ProductEvent> eventsFlux = Flux.interval(Duration.ofSeconds(1))
-                .map(val -> new ProductEvent(val, "ProductEvent"));
+                .map(val -> new ProductEvent(val, "Product Event"));
 
         return ServerResponse.ok()
                 .contentType(TEXT_EVENT_STREAM)
